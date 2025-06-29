@@ -42,9 +42,9 @@ VALIDATE $? "Enabling MYSQL server"
 systemctl start mysqld &>> $LOG_FILE_NAME
 VALIDATE $? "Starting MYSQL server"
 
-mysql -h 54.204.168.32 -u root -pExpenseApp@1 -e "use databases;" #to check if root password is already set
+mysql -h 54.204.168.32 -u root -pExpenseApp@1 -e "show databases;" #to check if root password is already set
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then
     echo "setup the root password"
     mysql_secure_installation --set-root-pass ExpenseApp@1
