@@ -34,13 +34,13 @@ VALIDATE(){
 CHECKROOT
 
 dnf install mysql-server -y  &>> LOG_FILE_NAME
-VALIDATE() $? "Installing MYSQL server"
+VALIDATE $? "Installing MYSQL server"
 
 systemctl enable mysqld
-VALIDATE() $? "Enabling MYSQL server"
+VALIDATE $? "Enabling MYSQL server"
 
 systemctl start mysqld 
-VALIDATE() $? "Starting MYSQL server"
+VALIDATE $? "Starting MYSQL server"
 
 mysql_secure_installation --set-root-pass ExpenseApp@1
-VALIDATE() $? "Setting of root password"
+VALIDATE $? "Setting of root password"
