@@ -25,6 +25,7 @@ VALIDATE(){
             echo -e "$2.... is $G SUCCESS $N"
         else
             echo -e "$2.... is $R FAILED $N"
+            exit 1
     fi
 }
 
