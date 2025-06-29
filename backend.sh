@@ -48,6 +48,7 @@ then
     VALIDATE $? "Addition of user Expense"
 else
     echo "Expense user alreay exists...$Y SKIPPING....$N"
+fi
 
 mkdir /app &>> $LOG_FILE_NAME
 VALIDATE $? "Creation of App directory"
