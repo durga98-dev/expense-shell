@@ -31,7 +31,7 @@ VALIDATE(){
     fi
 }
 
-CHECKROOT()
+CHECKROOT
 
 dnf install mysql-server -y  &>> LOG_FILE_NAME
 VALIDATE() $? "Installing MYSQL server"
