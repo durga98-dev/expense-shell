@@ -36,11 +36,21 @@ CHECKROOT
 dnf install mysql-server -y  &>> LOG_FILE_NAME
 VALIDATE $? "Installing MYSQL server"
 
-systemctl enable mysqld
+systemctl enable mysqld &>> LOG_FILE_NAME
 VALIDATE $? "Enabling MYSQL server"
 
-systemctl start mysqld 
+systemctl start mysqld &>> LOG_FILE_NAME
 VALIDATE $? "Starting MYSQL server"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
-VALIDATE $? "Setting of root password"
+mysql -h 54.204.168.32 -u root -pExpenseApp@1 -e "use databases;" #to check if root password is already set
+
+if [ $? -ne 0]
+then
+    echo "setup the root password"
+    mysql_secure_installation --set-root-pass ExpenseApp@1
+    VALIDATE $? "Setting of root password"
+else
+    echo "Root password already set"
+fi
+
+# netstat -lntp, systemctl status mysqld, ps -ef | grep mysqld - to verify
