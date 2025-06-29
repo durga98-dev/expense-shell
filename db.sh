@@ -33,7 +33,7 @@ VALIDATE(){
 
 CHECKROOT()
 
-dnf install mysql-server -y &>>LOG_FILE_NAME
+dnf install mysql-server -y  &>> LOG_FILE_NAME
 VALIDATE() $? "Installing MYSQL server"
 
 systemctl enable mysqld
