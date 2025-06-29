@@ -33,13 +33,13 @@ VALIDATE(){
 
 CHECKROOT
 
-dnf install mysql-server -y  &>> LOG_FILE_NAME
+dnf install mysql-server -y  &>> $LOG_FILE_NAME
 VALIDATE $? "Installing MYSQL server"
 
-systemctl enable mysqld &>> LOG_FILE_NAME
+systemctl enable mysqld &>> $LOG_FILE_NAME
 VALIDATE $? "Enabling MYSQL server"
 
-systemctl start mysqld &>> LOG_FILE_NAME
+systemctl start mysqld &>> $LOG_FILE_NAME
 VALIDATE $? "Starting MYSQL server"
 
 mysql -h 54.204.168.32 -u root -pExpenseApp@1 -e "use databases;" #to check if root password is already set
