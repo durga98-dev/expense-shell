@@ -21,7 +21,7 @@ VALIDATE(){
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3: -14}
+DAYS=${3:-14}
 
 USAGE(){
     echo -e "$R USAGE::$N sh $0 <SOURCE_DIR> <DEST_DIR> <DAYS(optional)>"
@@ -45,5 +45,5 @@ then
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIR -name *.log +mtime $DAYS)
+FILES=$(find $SOURCE_DIR -name *.log -mtime $DAYS)
 echo "Files to delete: $FILES"
