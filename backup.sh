@@ -27,7 +27,7 @@ USAGE(){
     echo -e "$R USAGE::$N $0 <SOURCE_DIR> <DEST_DIR> <DAYS(optional)>"
 }
 
-if [$# -lt 2 ]
+if [ $# -lt 2 ]
 then
     USAGE
     exit 1
