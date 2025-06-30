@@ -33,7 +33,7 @@ then
     exit 1
 fi
 
-if [ ! -d DEST_DIR ]
+if [ ! -d $DEST_DIR ]
 then
     echo "$DEST_DIR doesn't exist....please check"
     exit 1
