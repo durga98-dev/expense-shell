@@ -26,4 +26,10 @@ DIR="/home/ec2-user/app-logs"
 OLD=$(find $DIR -name "*.log" -mtime +14)
 echo -e "$R Files to be deleted are $N: $OLD"
 
+#FILE=$OLD
+while read -r line
+do 
+    echo "$line"
+done < "$OLD"
+
  
