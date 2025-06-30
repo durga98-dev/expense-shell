@@ -28,7 +28,8 @@ echo -e "$R Files to be deleted are $N: $OLD"
 
 while read -r line
 do 
-    echo "Deleting the files "rm -rf $line""
+    echo "Deleting the files"
+    rm -rf $line
 done <<< $OLD # <<< used to read the output of variable
 
  
