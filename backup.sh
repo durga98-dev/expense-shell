@@ -57,7 +57,7 @@ then
         echo "Successfully created zip file for files older than $DAYS"
         while read -r l
         do
-            echo "Deleting files: $l
+            echo "Deleting files: $l"
             rm -rf $l
         done <<< $FILES
     else
