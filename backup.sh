@@ -24,8 +24,20 @@ DEST_DIR=$2
 PARAMETER=${3: -14}
 
 USAGE(){
-    echo -e "$R USAGE::$N $0 <SOURCE_DIR> <DEST_DIR> <DAYS(optional)>"
+    echo -e "$R USAGE::$N sh $0 <SOURCE_DIR> <DEST_DIR> <DAYS(optional)>"
 }
+
+if [ ! -d $SOURCE_DIR ]
+then
+    echo "$SOURCE_DIR doest not exist....Please check"
+    exit 1
+fi
+
+if [ ! -d DEST_DIR ]
+then
+    echo "$DEST_DIR doesn't exist....please check"
+    exit 1
+fi
 
 if [ $# -lt 2 ]
 then
