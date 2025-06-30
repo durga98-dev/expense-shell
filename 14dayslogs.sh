@@ -30,7 +30,6 @@ while read -r l
 do 
     echo "Deleting the file $l"
     rm -rf $l
-    echo "All files are deleted"
 done <<< $OLD # <<< used to read the output of variable
 
  
